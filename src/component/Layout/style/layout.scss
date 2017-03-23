@@ -1,0 +1,22 @@
+@import "../../../index";
+
+.layout{
+  display: flex;
+  height: 100%;
+  .leftNav{
+    height: 100%;
+  }
+  .main{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    .header{
+      height: $headerHeight;
+      background:$headColor;
+    }
+    .content{
+      flex:1;
+      height: 100%;
+    }
+  }
+}

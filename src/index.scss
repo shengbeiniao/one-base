@@ -1,0 +1,17 @@
+$headerHeight:50px;
+$mainColor:#108ee9;
+$leftNavColor:#273A49;
+$headColor:lighten($leftNavColor,5);
+$lineColor:#e9e9e9;
+$fontColor:#fff;
+
+:global{
+  html, body, #root {
+    height: 100%;
+    margin:0;
+    overflow: hidden;
+  }
+  body{
+    display: block;
+  }
+}

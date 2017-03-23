@@ -1,0 +1,24 @@
+@import "../../../index";
+
+.layout{
+  position: relative;
+  display: flex;
+  height: 100%;
+  .left{
+    height: 100%;
+  }
+  .right{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .content{
+      flex:1;
+      height: 100%;
+      overflow: auto;
+      padding-left:5px;
+      padding-right:5px;
+      padding-bottom: 50px;
+    }
+  }
+}

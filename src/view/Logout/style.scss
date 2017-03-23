@@ -1,0 +1,27 @@
+@import "../../index";
+
+.container{
+  padding-top: 150px;
+  .main{
+    color:white;
+    text-align: center;
+    padding:100px;
+    background-color: transparentize($mainColor,0.65);
+    img{
+      width: 300px;
+      margin-left:10%;
+    }
+    .nav{
+      margin-top: 30px;
+      a{
+        padding:10px 30px;
+        color:white;
+        font-size: 14px;
+        background-color: $mainColor;
+        &:hover{
+          background-color:transparentize($mainColor,0.3) ;
+        }
+      }
+    }
+  }
+}

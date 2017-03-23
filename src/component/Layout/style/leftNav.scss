@@ -1,0 +1,70 @@
+@import "../../../index";
+
+.nav{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width:180px;
+  background-color: $leftNavColor;
+  transition:width 0.3s ease;
+  .top{
+    height:50px;
+    border-bottom: 1px solid $leftNavColor*0.8;
+    padding-left:13px;
+    cursor: pointer;
+    span{
+      color:white;
+      font-size:1.5em;
+      text-transform: uppercase;
+      margin-left:10px;
+    }
+    img{
+      position: absolute;
+      left: 40px;
+      top: 5px;
+      display:inline-block;
+      width: 120px;
+    }
+    &:hover{
+      background-color: $headColor*1.2;
+    }
+    i{
+      display: inline-block;
+      height: 50px;
+      line-height: 50px;
+      color:lighten($leftNavColor,60);
+      font-size: 1.5em;
+    }
+  }
+  .middle{
+    flex:1;
+    border-right:1px solid $lineColor*0.95;
+  }
+  .bottom{
+    width: 100%;
+    background-color: lighten($leftNavColor,5);
+    border-right:1px solid transparentize($lineColor,0.5);
+    padding:5px;
+    .avatar{
+      height: 35px;
+      width: 35px;
+      cursor: pointer;
+      img{
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.toggle{
+  &.nav{
+    width:50px;
+  }
+  .top{
+    img{
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "../../../index";
+
+.header{
+  display: flex;
+  height: 100%;
+  .left{
+    flex:1;
+    .trigger{
+      color:white;
+      font-size: 2em;
+      cursor: pointer;
+    }
+  }
+  .profile{
+    span{
+      display: inline-block;
+      cursor: pointer;
+      margin-right:10px;
+      color:$fontColor;
+      height: $headerHeight;
+      line-height:$headerHeight;
+    }
+  }
+}

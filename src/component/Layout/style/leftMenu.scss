@@ -1,0 +1,55 @@
+@import "../../../index";
+
+.menu{
+  .item{
+    /*fix滑动文字残留*/
+    overflow-x:hidden;
+    cursor: pointer;
+    height: 50px;
+    line-height: 50px;
+    &:hover{
+      background-color:darken($mainColor,10);
+    }
+    i{
+      display: inline-block;
+      width: 20px;
+      margin-left:13px;
+      font-size:1.5em;
+      text-align: center;
+      color:darken($fontColor,20);
+    }
+    a,span{
+      display: inline-block;
+      margin-left:10px;
+      padding-right:10px;
+      color: $fontColor;
+    }
+    a>i{
+      font-size: 1.2em;
+    }
+  }
+  ul.subMenu{
+    overflow: hidden;
+    height:0;
+    transition:height 0.3s;
+    border-left:3px solid lighten($mainColor,20);
+  }
+}
+
+.toggle{
+  .item{
+    span,a>span{
+      display: none;
+    }
+    a>i{
+      margin-left:4px;
+      font-size:1.5em;
+    }
+  }
+}
+
+.active{
+  &.item{
+    background-color: $mainColor;
+  }
+}

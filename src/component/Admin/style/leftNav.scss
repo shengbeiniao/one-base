@@ -1,0 +1,76 @@
+@import "../../../index";
+
+.leftNav{
+  width: 180px;
+  height: 100%;
+  overflow:auto;
+  border-right:1px solid $lineColor*0.95;
+  transition: width 0.1s ease;
+  .title{
+    margin:13px 10px 10px 15px;
+  }
+  .menuWrapper{
+    ul{
+      border:none;
+    }
+  }
+  .collapse{
+    position: absolute;
+    z-index:10;
+    cursor: pointer;
+    top:50%;
+    left:165px;
+    width: 25px;
+    height: 50px;
+    transition: transform 0.3s;
+    transform:translateY(-50%) scaleX(1);
+    &:hover{
+      transform:translateY(-50%) scaleX(1.2);
+    }
+    .wrapper{
+      position: relative;
+      height: 100%;
+      &:hover{
+        i{
+          display: block;
+        }
+      }
+      .rect{
+        position: absolute;
+        left:0;
+        top:0;
+        width: 0;
+        height: 100%;
+        border-bottom: 9px solid transparent;
+        border-left: none;
+        border-right: 13px solid rgba($leftNavColor,0.2);
+        border-top: 9px solid transparent;
+      }
+      i{
+        display: none;
+        position: absolute;
+        left:2px;
+        height: 100%;
+        line-height: 50px;
+        font-size: 1.2em;
+        color:rgba($leftNavColor,0.5);
+      }
+    }
+  }
+}
+
+.toggle{
+  &.leftNav{
+    width: 0;
+  }
+  .collapse{
+    left:0;
+    transform-origin:0 50%;
+    .wrapper{
+      .rect{
+        border-left: 13px solid rgba($leftNavColor,0.2);
+        border-right: none;
+      }
+    }
+  }
+}
