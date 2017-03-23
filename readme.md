@@ -19,7 +19,7 @@
   ```
   $ mkdir one-base
   $ cd one-base
-  $ git clone https://github.com/shengbeiniao/one-base
+  $ git clone git@github.com:shengbeiniao/one-base.git
   $ npm i
   $ npm start
   ```
