@@ -1,7 +1,7 @@
 import Cookies from 'js-cookie';
 
 export default {
-  namespace: 'user',
+  namespace: 'base.user',
 
   state: {
     currentUser: {}
@@ -31,7 +31,19 @@ export default {
   },
 
   effects: {
-    *query({ payload }, { call, put }) {
+    *queryCasUser({ payload }, { call, put }) {
+      let casUser=JSON.parse(yield getPrivileges(payload.userId));
+      let currentUser={};
+      currentUser.userName=casUser.userName;
+      currentUser.realName=casUser.realName;
+      currentUser.email=casUser.email;
+      Cookies.set('currentUser', JSON.stringify(currentUser));
+      yield  put({
+        type:'setCurrentUser',
+        payload:{
+          currentUser:currentUser
+        }
+      });
     }
   },
 

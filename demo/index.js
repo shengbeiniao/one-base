@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 
 //test account
 let currentUser={
-  name: "三直",
+  realName: "三直",
   avatar: "http://shp.qpic.cn/bizmp/PPaumzdsDtdO8TtAHGs0qicqnMsBzBwyW21kPNa68M6nspFPj0Kn9icQ/"
 };
 Cookies.set('currentUser',JSON.stringify(currentUser));

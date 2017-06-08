@@ -24,14 +24,13 @@ export default class BaseData{
   };
 
   remove=(id)=>{
-    return request(`${this.prefix}${id}`, {
+    return request(`${this.prefix}/${id}`, {
       method: 'delete'
     });
   };
 
-  update=(body)=> {
-    let id=body.id;
-    return request(`${this.prefix}${id}`, {
+  update=(id,body)=> {
+    return request(`${this.prefix}/${id}`, {
       method: 'put',
       body:JSON.stringify(body)
     });

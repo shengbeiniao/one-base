@@ -64,7 +64,7 @@ class LeftMenu extends React.Component{
       return (
         <Tooltip key={subItem.key} placement="right" title={subItem.title}>
           <li className={itemClass}>
-            <a href={subItem.link}>
+            <a href={`http://${subItem.link}.yourdomain.com`}>
               <i className={subItem.icon}></i>
               <span>{subItem.title}</span>
             </a>
@@ -74,7 +74,7 @@ class LeftMenu extends React.Component{
     }else{
       return (
         <li  key={subItem.key} className={itemClass}>
-          <a href={subItem.link}>
+          <a href={`http://${subItem.link}.yourdomain.com`}>
             <i className={subItem.icon}></i>
             <span>{subItem.title}</span>
           </a>
@@ -85,7 +85,6 @@ class LeftMenu extends React.Component{
 
   render(){
     const leftMenuClass=style.menu+(this.props.collapse?' '+style.toggle:'');
-
     const subMenuHeight=item=>this.state.toggleKey==item.key?(item.children.length*50+'px'):0;
     const tooltipStyle={'display':this.props.collapse?'block':'none'};
     return (

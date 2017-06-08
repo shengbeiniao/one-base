@@ -14,6 +14,7 @@ const app = dva({
   history: browserHistory
 });
 
+app.model(require('./model/layoutModel.js'));
 app.model(require('./model/userModel.js'));
 
 export default app;

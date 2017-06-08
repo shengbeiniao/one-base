@@ -32,46 +32,43 @@
 
 1. 定义子项目路由
 ```
-import React from 'react';
-import {Router} from '../src/index';
-import {Route,IndexRedirect} from 'dva/router';
-import Hello from './Hello';
-//主项目激活路径
-let base='demo';
-//子项目title
-let title='Demo';
-//路由信息，支持多级
-let dataSource = [
-  {
-    title: 'Hello',
-    path:'hello'
-  }
-];
-//子项目激活路径
-let currentPath='hello';
+ 1. 定义子项目路由
+ 
+ //子项目标识，此标识在实际部署中等同于主机名，例如标识符demo，则生成http://demo.yourdomain.com
+ let base='demo';
+ //子项目title
+ let title='Demo';
+ //路由信息，支持多级
+ let dataSource = [
+   {
+     title: 'Hello',
+     path:'/hello'
+   }
+ ];
+ //子项目激活路径
+ let currentPath='/hello';
+ 
+ export default function() {
+   return (
+     <Router base={base} title={title} dataSource={dataSource}  currentPath={currentPath}>
+       <Route path="/">
+         <IndexRedirect to="/hello"/>
+         <Route path="/hello" component={Hello}/>
+       </Route>
+     </Router>
+   )
+ };
+ 
+ 2. 配置model
+ import {app} from '../src/index';
+ //app为dva对象
+ //配置model
+ //配置router
+ app.router(require('./router'));
+ //启动
+ app.start('#root');
+```
 
-export default function() {
-  return (
-    <Router base={base} title={title} dataSource={dataSource}  currentPath={currentPath}>
-      <Route path="/">
-        <IndexRedirect to="hello"/>
-        <Route path="hello" component={Hello}/>
-      </Route>
-    </Router>
-  )
-};
-```
-2. 配置model
-```
-import {app} from '../src/index';
-//app为dva对象
-//配置model
-//配置router
-app.router(require('./router'));
-//启动
-app.start('#root');
-
-```
 3. 注意事项
 
 子项目和主项目共用一个dva对象，配置model时，命名空间user已被占用，user存储登录相关状态信息，子项目可以引用。

@@ -10,3 +10,4 @@ export {default as app} from './app';
 export {default as Router} from './Router';
 export {default as BaseData} from './util/BaseData';
 export {default as request} from './util/request';
+export {default as menu} from './menu';

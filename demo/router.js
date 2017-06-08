@@ -8,17 +8,17 @@ let title='Demo';
 let dataSource = [
   {
     title: 'Hello',
-    path:'hello'
+    path:'/hello'
   }
 ];
-let currentPath='hello';
+let currentPath='/hello';
 
 export default function() {
   return (
     <Router base={base} title={title} dataSource={dataSource}  currentPath={currentPath}>
       <Route path="/">
-        <IndexRedirect to="hello"/>
-        <Route path="hello" component={Hello}/>
+        <IndexRedirect to="/hello"/>
+        <Route path="/hello" component={Hello}/>
       </Route>
     </Router>
   )
